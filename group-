@@ -49,3 +49,4 @@ systemd-timesync:x:109:
 systemd-network:x:110:
 systemd-resolve:x:111:
 systemd-bus-proxy:x:112:
+messagebus:x:113:
