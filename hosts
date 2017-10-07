@@ -5,3 +5,10 @@ ff02::2		ip6-allrouters
 # --- BEGIN PVE ---
 193.191.177.193 wouter-baeyens.uclllabs.be wouter-baeyens
 # --- END PVE ---
+#192.168.255.x wouter-GE60-2PC
+#public IP achter router in Beerse
+81.165.67.216 wouter-GE60-2PC
+# IP given by router in Beerse
+#192.168.0.142 wouter-GE60-2PC
+# Local ip adress when connecting through eth0
+#10.36.40.252 wouter-GE60-2PC
