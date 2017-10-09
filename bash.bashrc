@@ -3,6 +3,10 @@
 # To enable the settings / commands in this file for login shells as well,
 # this file has to be sourced in /etc/profile.
 
+TMOUT=900
+readonly TMOUT
+export TMOUT
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
