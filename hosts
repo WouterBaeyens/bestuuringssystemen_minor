@@ -5,10 +5,11 @@ ff02::2		ip6-allrouters
 # --- BEGIN PVE ---
 193.191.177.193 wouter-baeyens.uclllabs.be wouter-baeyens
 # --- END PVE ---
+# will figure out local ip next time/keep the mask as is?
 #192.168.255.x wouter-GE60-2PC
-#public IP achter router in Beerse
+#public IP Beerse
 81.165.67.216 wouter-GE60-2PC
-# IP given by router in Beerse
+# local Beerse (probably not used, since connection is not local)
 #192.168.0.142 wouter-GE60-2PC
-# Local ip adress when connecting through eth0
+# Local ip kot (eth0)
 #10.36.40.252 wouter-GE60-2PC
