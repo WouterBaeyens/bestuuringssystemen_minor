@@ -1,0 +1,19 @@
+# To see more examples, please see
+# /usr/share/doc/sshguard/examples/whitelistfile.example
+
+# Manual entry for single IP4 adresses
+# Mr T server IP
+193.191.177.6
+# IP at school
+10.25.107.109
+# IP in Leuven
+193.190.253.144
+# IP op kot onder Linux
+10.36.40.252
+
+# Address blocks in CIDR notation
+127.0.0.0/8
+::1/128
+
+#school algemeen
+10.0.0.0/8
