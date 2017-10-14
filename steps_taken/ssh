@@ -47,5 +47,12 @@ NOTE: added this server as 'rootucll' to sshconfig
 	on leia: 	add leia to ssh/config for leia
 			use ssh-copy-id from leia to r0305036@leia
 	ssh leia last | grep "logged"|grep -o '^r[0-9]*'
-
+9:
+	client:
+	vim .ssh/config            add ForwardX11 yes
+	server:
+	vim etc/ssh/sshd_config    X11Forwarding yes (+xauth installed)
+	client:
+	ssh -v -X rootucll
+	xclock
 
