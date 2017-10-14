@@ -11,3 +11,8 @@ SSH DAEMON CONFIG
 	chmod 700 .ssh; chmod 644 authorized_keys 
 	vim authorized_keys
 	paste public key
+**ssh 1-5 + installation sshguard
+SSHGuard
+- add sshguard to ip-tables and block abusers
+	iptables -N sshguard
+	iptables -A INPUT -j sshguard 
