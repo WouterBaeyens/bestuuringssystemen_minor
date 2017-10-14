@@ -1,0 +1,13 @@
+**ssh settings p1**
+SSH DAEMON CONFIG
+- listen to port 22345:
+	already set in sshdconfig
+- create user check + allow him to log in using pk
+	Useradd check
+	passwd check [checkPass]
+	root@wouter-baeyens:/home/check
+	> .ssh/authorized_keys
+	chown check .ssh (&auth_keys)
+	chmod 700 .ssh; chmod 644 authorized_keys 
+	vim authorized_keys
+	paste public key
