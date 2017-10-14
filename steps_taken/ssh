@@ -15,4 +15,32 @@ SSH DAEMON CONFIG
 SSHGuard
 - add sshguard to ip-tables and block abusers
 	iptables -N sshguard
-	iptables -A INPUT -j sshguard 
+	iptables -A INPUT -j sshguard
+
+SSH Exercises
+NOTE: added this server as 'rootucll' to sshconfig
+1:
+ 	scp -P 22345 file_to_copy.txt rootucll:/tmp
+2.1:
+	puttygen -> select 4096 bits
+	on server:
+	mkdir .ssh (chmod 700) & authorized_keys (chmod 644)
+	vim authorized_keys        paste ssh-rsa
+2.2:
+	used leia and connected to check
+	ssh-keygen -t rsa -C 'Keypair to us'
+	ssh-copy-id -p 22345 check@193.191.177.193
+	ssh -p 22345 check@193.191.177.193
+3:
+	scp -r rootucll:/etc /home/wouter
+4:
+	ssh-keygen -t rsa -N <pass>
+	Add password to login keyring (unlock login keyring)    
+		- Using seahorse UI
+         	- just tick the box (save pass)  when prompted for pass
+
+6:
+	rsync -avz rootucll:/etc /home/wouter
+7:
+	ssh rootucll ls
+
