@@ -55,4 +55,5 @@ NOTE: added this server as 'rootucll' to sshconfig
 	client:
 	ssh -v -X rootucll
 	xclock
-
+10:
+	ssh -R 
