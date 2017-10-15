@@ -1,0 +1,4 @@
+edited the crontab file by 'crontab -e' for root
+- added */15 * * * * /etc/scripts/incron_config.sh
+
+note: file can be found under /var/spool/cron/crontabs/root
