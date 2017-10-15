@@ -56,4 +56,12 @@ NOTE: added this server as 'rootucll' to sshconfig
 	ssh -v -X rootucll
 	xclock
 10:
-	ssh -R 
+	ssh -R 10001:darthvader.uclllabs.be:443 ucllroot
+	'tested' with: lynx https://localhost:10001/nw2/lab1-all-but-leia
+	(quotes, since this server could can access darthvader... without tunnels)
+12:
+	ssh -L 10001:darthvader.uclllabs.be:443 rootucll
+	'tested' on firefox https://localhost:10001/nw2/lab1	
+
+13:
+	tunnel_remote and tunnel_local: added to .ssh/config on local
