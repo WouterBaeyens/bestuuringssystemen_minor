@@ -2,3 +2,11 @@ edited the crontab file by 'crontab -e' for root
 - added */15 * * * * /etc/scripts/incron_config.sh
 
 note: file can be found under /var/spool/cron/crontabs/root
+
+->offline backup
+added the following script to cron.daily (local, not in this server):
+#!/bin/bash
+rsync -avz rootucll:/etc /home/wouter/ucllbackup;
+tar -cvjf /home/wouter/ucllbackuphistory/daily_$(date +%Y.%m.%d).tar.bz2 /home/wouter/ucllbackup/etc
+
+this is to make sync the backup-etc folder with the server and zip it for the current date
