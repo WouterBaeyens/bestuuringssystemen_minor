@@ -65,3 +65,13 @@ NOTE: added this server as 'rootucll' to sshconfig
 
 13:
 	tunnel_remote and tunnel_local: added to .ssh/config on local
+14:
+	ssh-kopy-id leia
+15:
+	local:
+	install sshfs
+	sudo modprobe fuse (load the module)
+	sudo adduser wouter fuse;sudo chown root:fuse /dev/fuse
+
+	sshfs ucclroot:/root ~/myserver
+	+ created bash-script with command above and added to startup
