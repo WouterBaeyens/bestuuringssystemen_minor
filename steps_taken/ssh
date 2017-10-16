@@ -73,5 +73,10 @@ NOTE: added this server as 'rootucll' to sshconfig
 	sudo modprobe fuse (load the module)
 	sudo adduser wouter fuse;sudo chown root:fuse /dev/fuse
 
+	_____
+	#! /bin/sh
 	sshfs ucclroot:/root ~/myserver
-	+ created bash-script with command above and added to startup
+	_____
+	+ created bash-script with command above and added to if-up.d
+	+ to run as root and be able to login as root: added key as root,
+	  changed owner to root
