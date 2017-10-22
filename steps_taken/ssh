@@ -38,6 +38,11 @@ NOTE: added this server as 'rootucll' to sshconfig
 	Add password to login keyring (unlock login keyring)    
 		- Using seahorse UI
          	- just tick the box (save pass)  when prompted for pass
+5:	 ssh daemon tries to resolve all connecting IP addresses; add IP to hosts for a faster connection
+	vim /etc/hosts
+	add <local? IP>     <computer name>
+	Enable reverse DNS-lookup again to notice the difference(?)
+	sudo service sshd restart     
 
 6:
 	rsync -avz rootucll:/etc /home/wouter
@@ -59,6 +64,12 @@ NOTE: added this server as 'rootucll' to sshconfig
 	ssh -R 10001:darthvader.uclllabs.be:443 ucllroot
 	'tested' with: lynx https://localhost:10001/nw2/lab1-all-but-leia
 	(quotes, since this server could can access darthvader... without tunnels)
+11:
+	edit: /etc/bash.bashrc
+	add things like: TMOUT=900
+	readonly TMOUT
+	export TMOUT
+
 12:
 	ssh -L 10001:darthvader.uclllabs.be:443 rootucll
 	'tested' on firefox https://localhost:10001/nw2/lab1	
@@ -66,7 +77,7 @@ NOTE: added this server as 'rootucll' to sshconfig
 13:
 	tunnel_remote and tunnel_local: added to .ssh/config on local
 14:
-	ssh-kopy-id leia
+	ssh-copy-id leia
 15:
 	local:
 	install sshfs
@@ -80,3 +91,4 @@ NOTE: added this server as 'rootucll' to sshconfig
 	+ created bash-script with command above and added to if-up.d
 	+ to run as root and be able to login as root: added key as root,
 	  changed owner to root
+	-> this gives a connection reset message, so i reverted back to a standard script that can be run.
