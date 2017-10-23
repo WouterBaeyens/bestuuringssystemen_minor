@@ -27,7 +27,7 @@ options {
 //edits
 	statistics-file "/var/cache/bind/named.stats";
 	//added ns1.uclllabs.be
-	allow-transfer { 127.0.0.1;193.191.176.254;193.191.177.4 };
+	allow-transfer { 127.0.0.1;193.191.176.254;193.191.177.4; };
 };
 
 logging {
