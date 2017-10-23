@@ -1,0 +1,3 @@
+Before a locale can be enabled on the system, it must be generated. This can be achieved by uncommenting applicable entries in /etc/locale.gen (add locale.gen to git)
+add the correct variables to /etc/default/locale
+Note: checked with printenv

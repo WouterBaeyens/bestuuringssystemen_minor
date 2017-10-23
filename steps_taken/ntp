@@ -1,0 +1,2 @@
+1. installed ntp (apt install ntp)
+2. changed ntp.confog (added servers leia and mrt.uclllabs.be and restrict default ignore)

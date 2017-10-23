@@ -1,0 +1,3 @@
+arp -n -> get mac and ip adress of router
+add to ethers <ip> <mac>
+arp -f
