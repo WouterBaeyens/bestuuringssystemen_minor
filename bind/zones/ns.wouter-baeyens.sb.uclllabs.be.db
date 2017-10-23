@@ -1,0 +1,10 @@
+$TTL	86400
+$ORIGIN 
+@IN  SOA ns1.wouter-baeyens.sb.uclllabs.be. root.wouter-baeyens.sb.uclllabs.be. (
+            2014100801  ; Serial
+            43200       ; Refresh
+            3600        ; Retry
+            1209600     ; Expire
+            180 )       ; Minimum TTL
+
+
