@@ -11,5 +11,11 @@ zone "wouter-baeyens.sb.uclllabs.be" {
         file "/etc/bind/zones/wouter-baeyens.sb.uclllabs.be.db";
 };
 
+//zone "other-student.sb.uclllabs.be" {
+//	type slave;
+//	file "/etc/bind/zones/other-student.sb.uclllabs.be.db"
+//};
+
 // add subzones below
+	
 	
