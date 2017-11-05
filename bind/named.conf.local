@@ -13,9 +13,3 @@ zone "wouter-baeyens.sb.uclllabs.be" {
 
 // add subzones below
 	
-zone "f.wouter-baeyens.sb.uclllabs.be" {
-       type master; 
-       file "/etc/bind/zones/f.wouter-baeyens.sb.uclllabs.be.db"; 
-       };
-	
-	
