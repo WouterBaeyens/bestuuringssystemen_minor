@@ -1,0 +1,4 @@
+1. install apache2
+2. add conf file in sites-available
+3. a2ensite <naam van config file>
+

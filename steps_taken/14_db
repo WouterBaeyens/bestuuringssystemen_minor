@@ -1,0 +1,9 @@
+1. install mysql-server
+2. mysql --user=root mysql
+4. use check;
+5. create user 'check'@'%' identified by 'rDEetGxq82DCE';
+6. create table log(date DATE, text VARCHAR(50));
+7. grant select, insert on check.log to 'check'@'%';
+
+? describe log; flush privileges
+
