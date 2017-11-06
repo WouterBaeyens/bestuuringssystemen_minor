@@ -1,0 +1,26 @@
+$TTL	86400 
+@	IN SOA ns.wouter-baeyens.sb.uclllabs.be. root.wouter-baeyens.sb.uclllabs.be. (
+            2018100808  ; Serial
+            43200       ; Refresh
+            3600        ; Retry
+            1209600     ; Expire
+            180 )       ; Minimum TTL
+;$ORIGIN .
+; Nameservers
+	IN NS ns.wouter-baeyens.sb.uclllabs.be.
+	IN NS ns1.uclllabs.be.
+	IN NS ns2.uclllabs.be.
+;delegated zones
+
+;root site
+	IN A	193.191.177.193
+; hostname records
+*	IN A	193.191.177.193
+;test website
+test	IN A	193.191.177.254
+;alias records
+www	IN CNAME wouter-baeyens.sb.uclllabs.be.
+; additional records
+check	IN CNAME	www.wouter-baeyens.sb.uclllabs.be
+stack	IN A	198.252.206.140
+wwwww	IN CNAME	www.wouter-baeyens.sb.uclllabs.be
