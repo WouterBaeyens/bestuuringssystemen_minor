@@ -11,10 +11,11 @@ zone "wouter-baeyens.sb.uclllabs.be" {
         file "/etc/bind/zones/wouter-baeyens.sb.uclllabs.be.db";
 };
 
-//zone "other-student.sb.uclllabs.be" {
-//	type slave;
-//	file "/etc/bind/zones/other-student.sb.uclllabs.be.db"
-//};
+zone "jim-peeters.sb.uclllabs.be" {
+	type slave;
+	file "/etc/bind/zones/jim-peeters.sb.uclllabs.be.db";
+	masters { 193.191.177.157; };
+};
 
 // add subzones below
 	
