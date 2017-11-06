@@ -1,4 +1,4 @@
-$TTL	86400 
+$TTL	3600 
 @	IN SOA ns.wouter-baeyens.sb.uclllabs.be. root.wouter-baeyens.sb.uclllabs.be. (
             20181008010  ; Serial
             43200       ; Refresh
