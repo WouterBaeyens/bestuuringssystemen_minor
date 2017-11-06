@@ -1,0 +1,54 @@
+#!/bin/bash
+option='A'
+#check if option -t is used
+if [[ $1 = -t ]]; then
+	shift
+	option=$1
+	shift
+	#check if option -t is valid
+	if ! echo $option |grep 'A\|MX\|CNAME'; then
+		echo "\"$option\" is not a valid -t option, choose A|MX|CNAME."
+		exit 1
+	fi
+fi
+#check if third parameter is empty (second one will be used for defining zone file)
+if [ -z "$3" ] 
+then
+	zonefile="$2"
+else
+	zonefile="$3"
+fi
+
+#check if zone file exists
+if [ -f "/etc/bind/zones/$zonefile.db" ]; 
+then
+	echo "file found"
+else
+	echo "no zone file found for $zonefile"
+	validzonefile='wouter-baeyens.sb.uclllabs.be'
+	#search for a appropriate sub-zone file
+	while echo "$zonefile" | grep '.wouter-baeyens.sb.uclllabs.be';do 
+		zonefile=$(echo "$zonefile" | sed 's/^[^.]*.//g')
+		if [ -f "/etc/bind/zones/$zonefile.db" ]; then
+			validzonefile="$zonefile"
+			break
+		fi
+	done
+	
+	
+	echo "do you wish to add the record to $validzonefile instead (y/n)? "
+	read answer
+	if echo "$answer" | grep -iq "^y" ;then
+		echo "adding record to $validzonefile" 	
+		zonefile="$validzonefile"
+	else
+		echo "no record is added"
+		exit 1
+	fi
+fi
+
+echo "$1	$option	$2"
+sed -i '/; additional records/a \
+'"$1"'\tIN '"$option"'\t'"$2" "/etc/bind/zones/$zonefile.db"
+
+sed -ri 's/(.*)([0-9]+)(.*)(; Serial)/echo "\1\$((\2+1))\3\4"/ge' "/etc/bind/zones/$zonefile.db"
