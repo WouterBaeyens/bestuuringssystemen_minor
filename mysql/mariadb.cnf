@@ -21,3 +21,6 @@
 # Import all .cnf files from configuration directory
 !includedir /etc/mysql/conf.d/
 !includedir /etc/mysql/mariadb.conf.d/
+
+[mysqld]
+bind-address = 193.191.177.193
