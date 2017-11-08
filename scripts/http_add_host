@@ -1,0 +1,30 @@
+#!/bin/bash
+fqdn=$1
+echo -e "server name: \t$1"
+domain=$(echo $1 | sed -e "s/\..*/ /; s/ //g")
+echo -e "domain name: \t$domain"
+digresult=$(dig +noall +answer $1)
+if [[ ! $digresult ]]; then
+	echo "error: no domain exists for $fqdn"
+	exit 1;
+else
+	ip=$(echo $digresult|grep -oE '[^ ]+$')
+	if [[ ! $ip == '193.191.177.193' ]]; then
+		echo "error: can't create vhost for foreign domain ($fqdn resolves to $ip)"	
+	exit 1;
+	fi
+fi
+
+conf_file="/etc/apache2/sites-available/$domain.conf"
+echo -e "conf file: \t$conf_file"
+sed "s/<fqdn>/$fqdn/; s/<domain>/$domain/" /etc/scripts/default-files/apache_site.conf > $conf_file
+root_dir="/var/www/html/$domain"
+echo "creating index.html at $root_dir"
+if [ ! -d "$root_dir" ]; then
+	mkdir $root_dir
+else
+	echo "note: dir already exists"
+fi
+echo "welcome to the $domain domain!" > "$root_dir/index.html"
+a2ensite $domain
+systemctl reload apache2

@@ -11,7 +11,7 @@ sed -i '/;delegated zones/a \
 '"$1"'\tIN NS ns.wouter-baeyens.sb.uclllabs.be' /etc/bind/zones/wouter-baeyens.sb.uclllabs.be.db
 
 #update serial safter adding subzone NS to main zone
-sed -ri 's/(.*)([0-9]+)(.*)(; Serial)/echo "\1\$((\2+1))\3\4"/ge' "/etc/bind/zones/wouter-baeyens.sb.uclllabs.be.db"
+sed -ri 's/( *)([0-9]+)( *)(; Serial)/echo "\1\$((\2+1))\3\4"/ge' "/etc/bind/zones/wouter-baeyens.sb.uclllabs.be.db"
 
 echo '@	IN SOA ns.wouter-baeyens.sb.uclllabs.be. root.wouter-baeyens.sb.uclllabs.be. (
 	1 	; Serial

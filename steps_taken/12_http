@@ -1,4 +1,7 @@
 1. install apache2
 2. add conf file in sites-available
 3. a2ensite <naam van config file>
-
+4. (install php) apt-get install php libapache2-mod-php php-mcrypt
+5. apache2.config > <Dir /www/>AllowOverride All
+6. create .htaccess file in /www/html/www1/private
+7. generate .htpasswd file and put it in the folder you link to (same as .htaccess)

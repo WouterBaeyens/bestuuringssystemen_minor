@@ -29,3 +29,4 @@ check wouter-baeyens = (root) NOPASSWD: /usr/lib/nagios/plugins/check_apt
 check wouter-baeyens = (root) NOPASSWD: /usr/sbin/arp
 check wouter-baeyens = (root) NOPASSWD: /etc/scripts/dns_add_zone
 check wouter-baeyens = (root) NOPASSWD: /etc/scripts/dns_add_record
+check wouter-baeyens = (root) NOPASSWD: /etc/scripts/http_add_host

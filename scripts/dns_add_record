@@ -51,4 +51,4 @@ echo "$1	$option	$2"
 sed -i '/; additional records/a \
 '"$1"'\tIN '"$option"'\t'"$2" "/etc/bind/zones/$zonefile.db"
 
-sed -ri 's/(.*)([0-9]+)(.*)(; Serial)/echo "\1\$((\2+1))\3\4"/ge' "/etc/bind/zones/$zonefile.db"
+sed -ri 's/( *)([0-9]+)( *)(; Serial)/echo "\1\$((\2+1))\3\4"/ge' "/etc/bind/zones/$zonefile.db"
