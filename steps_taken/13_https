@@ -12,3 +12,12 @@ RewriteEngine On
 RewriteCond %{HTTP_HOST} ^example\.com [NC]
 RewriteCond %{SERVER_PORT} 80 
 RewriteRule ^(.*)$ https://www.example.com/$1 [R,L]
+
+5. add +- same htaccess to supersecure
+
+6. add to ssl.conf file (in sites-available for supersecure)
+<VirtualHost *:443>
+...
+Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains"
+...
+</VirtualHost>
