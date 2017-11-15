@@ -1,0 +1,14 @@
+1. add CAA certificates to DNS
+@	CAN 0 issue "letsencrypt.org"
+@	CAA 0 iodef "mailto:root@wouter-baeyeens.sb.uclllabs.be
+2. issue certbot command
+certbot --staging --apache -d "wouter-baeyens.sb.uclllabs.be,secure.wouter-baeyens.sb.uclllabs.be,supersecure.wouter-baeyens.sb.uclllabs.be"
+
+3. enable rewrite in apache2
+a2enmod rewrite
+
+4. add .htaccess to your secure domain (html/secure)
+RewriteEngine On 
+RewriteCond %{HTTP_HOST} ^example\.com [NC]
+RewriteCond %{SERVER_PORT} 80 
+RewriteRule ^(.*)$ https://www.example.com/$1 [R,L]
