@@ -1,6 +1,6 @@
 $TTL	3600 
 @	IN SOA ns.wouter-baeyens.sb.uclllabs.be. root.wouter-baeyens.sb.uclllabs.be. (
-            2018100821  ; Serial
+            2018100822  ; Serial
             3600       ; Refresh
             900         ; Retry
             1209600     ; Expire
@@ -19,7 +19,9 @@ $TTL	3600
 @	IN A	193.191.177.193
 ; hostname records
 *	IN A	193.191.177.193
-
+; mail records
+mx	IN A	193.191.177.193
+@	IN MX	10 mx.wouter-baeyens.sb.uclllabs.be
 ;test website
 test	IN A	193.191.177.254
 ;alias records
