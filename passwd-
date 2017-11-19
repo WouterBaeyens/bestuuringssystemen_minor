@@ -1,4 +1,4 @@
-root:x:0:0:root:/root:/bin/bash
+root:x:0:0:root:/root:/usr/bin/zsh
 daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
 bin:x:2:2:bin:/bin:/usr/sbin/nologin
 sys:x:3:3:sys:/dev:/usr/sbin/nologin
@@ -28,3 +28,5 @@ check:x:1000:1000::/home/check:
 ntp:x:108:115::/home/ntp:/bin/false
 bind:x:109:116::/var/cache/bind:/bin/false
 mysql:x:110:117:MySQL Server,,,:/nonexistent:/bin/false
+dovecot:x:111:118:Dovecot mail server,,,:/usr/lib/dovecot:/bin/false
+dovenull:x:112:119::/nonexistent:/bin/false
