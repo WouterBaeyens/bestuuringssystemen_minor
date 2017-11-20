@@ -1,5 +1,7 @@
 # See /usr/share/postfix/main.cf.dist for a commented, more complete version
 
+#myhostname=wouter-baeyens.sb.uclllabs.be
+
 smtpd_banner = $myhostname ESMTP $mail_name (Debian/GNU)
 biff = no
 
@@ -12,17 +14,24 @@ append_dot_mydomain = no
 alias_maps = hash:/etc/aliases
 alias_database = hash:/etc/aliases
 mydestination = $myhostname, localhost.$mydomain, localhost
+#myorigin = localhost
+#mydestination = localhost 
 relayhost = 
 mynetworks = 127.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16
 inet_interfaces = all
 recipient_delimiter = +
+
+#Deliver to mailbox:
 home_mailbox = Maildir/
-virtual_mailbox_domains = /etc/postfix/vhosts
+#virtual_transport = lmtp:unix:private/dovecot-lmtp
+
+virtual_alias_domains = /etc/postfix/vhosts
+
 virtual_mailbox_base = /var/vmail
 virtual_mailbox_maps = hash:/etc/postfix/vmaps
 virtual_minimum_uid = 1000
-local_recipient_maps = $virtual_mailbox_maps
 virtual_uid_maps = static:5000
 virtual_gid_maps = static:5000
+local_recipient_maps = $virtual_mailbox_maps
 
-local_transport = virtual
+
