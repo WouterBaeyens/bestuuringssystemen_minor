@@ -1,0 +1,4 @@
+RewriteEngine On 
+RewriteCond %{HTTP_HOST} ^secure\.wouter-baeyens\.sb\.uclllabs\.be [NC]
+RewriteCond %{SERVER_PORT} 80 
+RewriteRule ^(.*)$ https://secure.wouter-baeyens.sb.uclllabs.be/$1 [R,L]

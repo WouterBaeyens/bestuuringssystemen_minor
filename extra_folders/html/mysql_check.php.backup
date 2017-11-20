@@ -1,0 +1,33 @@
+dit werkt toch al
+<?php
+error_reporting(-1);
+ini_set('display_errors','On');
+ 
+
+echo "test2";
+
+$servername = "localhost";
+$username = "root";
+$username2 = "check@localhost";
+$pass1="rootpass"
+//$pass = "EetGxq82DCE";
+
+// create connection	
+//$conn = new mysqli($servername, $username, "rootpass", "check");
+//$conn = mysqli_connect($servername, $username, "rootpass", "check");
+//if ($conn->connect_error){
+//if(! $conn){
+//	die("Connection failed: " . $conn->connect_error);
+//}
+/*
+$sql="SELECT text from log order by id limit 1"
+//$result = mysqli_query($conn,$sql);
+	$result = $conn->query($sql);
+//if ($result->num_rows > 0){
+	//output data of each row
+//	while($row = $result->fe
+echo "result = $result"; 
+}
+$conn->close();*/
+//$conn->close();
+?>

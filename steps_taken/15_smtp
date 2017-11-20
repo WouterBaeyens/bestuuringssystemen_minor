@@ -1,0 +1,29 @@
+1. add mx records in dns
+	mx      IN A    193.191.177.193
+	@       IN MX   10 mx.wouter-baeyens.sb.uclllabs.be
+2. change inet_interfaces from loopback-only to all
+(another possibility is $myhostname, localhost but so far all seems to suffice for the requirements given)
+
+3. in main.cf (in etc/postfix)
+	mynetworks = 127.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16
+(another possibility seems to be using mynetworks_style)
+
+4. added home_mailbox = Maildir/ (maybe that results in it using the maildir format(?) )
+
+5. installing dovecot
+apt-get install dovecot-core dovecot-imapd dovecot-lmtpd
+
+6. configure dovecot
+
+in 10-master.conf (dovecot)
+service lmtp {
+  unix_listener /var/spool/postfix/private/dovecot-lmtp {
+        group = postfix
+        mode = 0600
+        user = postfix
+  }
+
+in postfix main.cf
+virtual_transport = lmtp:unix:private/dovecot-lmtp
+
+
